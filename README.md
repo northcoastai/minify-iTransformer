@@ -63,6 +63,22 @@ pip install -r requirements.txt
 
 1. The datasets can be obtained from [Google Drive](https://drive.google.com/file/d/1l51QsKvQPcqILT3DwfjCgx8Dsg2rpjot/view?usp=drive_link) or [Baidu Cloud](https://pan.baidu.com/s/11AWXg1Z6UwjHzmto4hesAA?pwd=9qjr).
 
+1. (Optional) Run inference with the minimal script.
+
+   Install lightweight dependencies and prepare the Traffic dataset:
+
+   ```bash
+   pip install -r minimal/requirements.txt
+   unzip iTransformer_datasets.zip
+   mv iTransformer_datasets/traffic ./dataset/
+   ```
+
+   Then perform inference (provide a trained checkpoint if available):
+
+   ```bash
+   python minimal/inference.py --pred_len 96 --checkpoint ./checkpoints/traffic_minimal_96/checkpoint.pth
+   ```
+
 2. Train and evaluate the model. We provide all the above tasks under the folder ./scripts/. You can reproduce the results as the following examples:
 
 ```
